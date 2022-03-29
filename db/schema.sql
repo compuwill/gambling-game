@@ -1,0 +1,6 @@
+CREATE TABLE player (
+    id INT PRIMARY KEY,
+    name VARCHER(30) NOT NULL,
+    HASHED_PASSWORD VARCHER(50) NOT NULL,
+    cash INT;
+)
