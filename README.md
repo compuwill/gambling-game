@@ -1,1 +1,1 @@
-# group-project
+# gambling-game
