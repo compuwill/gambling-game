@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS gambler;
+CREATE DATABASE gambler;
+USE gambler;

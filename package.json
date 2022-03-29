@@ -20,7 +20,9 @@
   "homepage": "https://github.com/compuwill/gambling-game#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "bcrypt": "^5.0.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
-  }
+  },
+  "devDependencies": {}
 }
