@@ -37,6 +37,11 @@ User.init(
         len: [6],
       },
     },
+    // define player cash
+    cash: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    }
   },
   {
     hooks: {
