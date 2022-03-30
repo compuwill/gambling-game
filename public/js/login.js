@@ -47,13 +47,14 @@ function openForm(evt, formName) {
     const email = document.querySelector('#email-signup').value.trim();
     const password1 = document.querySelector('#password-signup1').value.trim();
     const password2 = document.querySelector('#password-signup2').value.trim();
+    
 
     if (password1 != password2) alert("Passwords don't match.");
   
     if (username && email && password1 && password2) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password1 }),
+        body: JSON.stringify({ username, email, password: password1 }),
         headers: { 'Content-Type': 'application/json' },
       });
   
