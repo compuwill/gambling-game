@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Data extends Model {}
 // player data records
-Data.init(
+Bank.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,7 +20,7 @@ Data.init(
         },
         winnings: {
             type: DataTypes.DECIMAL,
-            // I put a default of 0, can change if needed
+            // placeholder value
             defaultValue: 0,
             allowNull: false
         }
@@ -29,8 +29,8 @@ Data.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'data'
+    modelName: 'bank'
     }
 );
 
-module.exports = Data;
+module.exports = Bank;
