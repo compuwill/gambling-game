@@ -8,8 +8,6 @@ const checkResult = require("../../utils/game-logic");
 router.post("/dice", withAuth, (req, res) => {
   console.log("someone's playing dice!");
   // expects {user_id: 1, bet_amount: 5}
-  if (req.session.loggedIn || true == true) {
-    //make sure the user is logged in before rolling
     //get the user
     User.findOne({
       attributes: { exclude: ["password"] },
@@ -71,9 +69,7 @@ router.post("/dice", withAuth, (req, res) => {
         });
       }
     });
-  } else {
-    res.status(404).end();
-  }
+
 });
 
 //helper function

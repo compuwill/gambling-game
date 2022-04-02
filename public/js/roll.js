@@ -3,15 +3,9 @@ function rollDice(rolls) {
   const dice = [...document.querySelectorAll(".die-list")];
   var counter = 0;
   dice.forEach((die) => {
-    toggleClasses(die);
     die.dataset.roll = rolls[counter]; //getRandomNumber(1, 6);
     counter++;
   });
-}
-
-function toggleClasses(die) {
-  die.classList.toggle("odd-roll");
-  die.classList.toggle("even-roll");
 }
 
 function getRandomNumber(min, max) {
