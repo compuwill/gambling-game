@@ -1,10 +1,22 @@
 <main>
-    <div class='w100 flex column align-items-center'>
-        <h3>Welcome, {{user.username}}!</h3>
-        <p>You are now logged in.</p>
-        <p>Enjoy this wonderfull app!</p>
-        <button id="logout">Log out</button>
-    </div>
+  <div class="w100 flex column align-items-center">
+    <h3>Welcome, {{user.username}}!</h3>
+    <p>You are now logged in.</p>
+    <p id="user-cash">You have ${{user.cash}}!</p>
+
+{{> dice}}
+
+    <form class="bet-form">
+      <div>
+        <button type="button" id="roll-btn">roll dice</button>
+      </div>
+      <p id="result">Ready to Roll!</p>
+    </form>
+
+    <button id="logout">Log out</button>
+  </div>
 </main>
 
 <script src="/js/logout.js"></script>
+
+<script src="/js/roll.js"></script>

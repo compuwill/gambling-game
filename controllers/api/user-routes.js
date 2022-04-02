@@ -11,10 +11,12 @@ router.post('/', async (req, res) => {
       cash: req.body.cash,
     });
 
+    const user = dbUserData.get({ plain: true }) //get user plain data
+    
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user = { username: req.body.username, email: req.body.email };
+      req.session.user = { username: req.body.username, email: req.body.email, cash: user.cash };
 
       res.status(200).json(dbUserData);
     });
@@ -52,7 +54,7 @@ router.post('/login', async (req, res) => {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user = { username: user.username, email: user.email };
+      req.session.user = { username: user.username, email: user.email, cash: user.cash };
 
       res
         .status(200)

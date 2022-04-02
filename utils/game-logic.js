@@ -4,21 +4,22 @@ function getRandomInt(max) {
 
 
 function checkResult(rolls) {
-    rolls.sort(); //sorts the rolls so its easier to check for a win
+    var rollscopy = rolls.slice(0);
+    rollscopy.sort(); //sorts the rolls so its easier to check for a win
 
-    console.log(rolls);
+    console.log(rollscopy);
 
     //default the straight to true
     var straight = true;
-    var lastNum = rolls[0]; //set the last num to the first die
+    var lastNum = rollscopy[0]; //set the last num to the first die
 
     var consecutiveNums = [];
     var currentStreak = 1; //one die is a one die streak
 
     //starting at the second die
-    for (let i = 1; i < rolls.length; i++) {
+    for (let i = 1; i < rollscopy.length; i++) {
         //currnum
-        var currNum = rolls[i];
+        var currNum = rollscopy[i];
 
 
         //if consecutive
