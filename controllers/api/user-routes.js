@@ -12,9 +12,10 @@ router.post('/', async (req, res) => {
     });
 
     const user = dbUserData.get({ plain: true }) //get user plain data
-    
+
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
       req.session.user = { username: req.body.username, email: req.body.email, cash: user.cash };
 
@@ -53,6 +54,7 @@ router.post('/login', async (req, res) => {
     const user = dbUserData.get({plain: true})
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
       req.session.user = { username: user.username, email: user.email, cash: user.cash };
 

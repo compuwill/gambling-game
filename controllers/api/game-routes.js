@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 const checkResult = require("../../utils/game-logic");
 
 // Roll the Dice!
-router.post("/dice", (req, res) => {
+router.post("/dice", withAuth, (req, res) => {
   console.log("someone's playing dice!");
   // expects {user_id: 1, bet_amount: 5}
   if (req.session.loggedIn || true == true) {
@@ -13,7 +14,7 @@ router.post("/dice", (req, res) => {
     User.findOne({
       attributes: { exclude: ["password"] },
       where: {
-        id: req.body.user_id,
+        id: req.session.user_id,
       },
     }).then((dbUserData) => {
       if (!dbUserData) {
@@ -48,7 +49,7 @@ router.post("/dice", (req, res) => {
           },
           {
             where: {
-              id: req.body.user_id,
+              id: req.session.user_id,
             },
           }
         );
