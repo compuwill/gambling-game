@@ -39,7 +39,7 @@ User.init(
     },
     // define player cash
     cash: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10,2),
       defaultValue: 50,
       allowNull: false
     }

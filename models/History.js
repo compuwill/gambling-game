@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Data extends Model {}
+class History extends Model {}
 // player data records
-Bank.init(
+History.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,7 +19,7 @@ Bank.init(
             }
         },
         winnings: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(10,2),
             // placeholder value
             defaultValue: 0,
             allowNull: false
@@ -29,8 +29,8 @@ Bank.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'bank'
+    modelName: 'history'
     }
 );
 
-module.exports = Bank;
+module.exports = History;

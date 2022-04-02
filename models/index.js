@@ -1,8 +1,8 @@
 const User = require('./User');
-const Bank = require('./Bank');
+const History = require('./History');
 
-Bank.belongsTo(User, {
+History.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { User };
+module.exports = { User, History };
