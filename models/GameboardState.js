@@ -1,10 +1,10 @@
-// NOTE: Ignore this model for now ( 1 of 4 )
+// Active Model
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class DiceImagePaths extends Model {}
+class GameboardState extends Model {}
 
-DiceImagePaths.init(
+GameboardState.init(
    {
       id: {
          type: DataTypes.INTEGER, 
@@ -36,22 +36,35 @@ DiceImagePaths.init(
         type: DataTypes.STRING,
         allowNull: false
       },
+      bet_amount: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: false
+      },
+      account_balance: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: false
+      },
+      prize_winning_prompt: {
+         type: DataTypes.STRING,
+         allowNull: false
+       },
       // -- defined as the foreign key
-      dice_game_setup_id:{ 
+      user_id:{ 
          type: DataTypes.INTEGER,
          references:{
-            model: 'dicegamesetup',
+            model: 'user',
             key: 'id'
          }
       } // last entity
    }, // end of 1st object      
    {
-      sequelize, // pass in our imported sequelize connection (the direct connection to our database)
-      timestamps: true, // don't automatically create createdAt/updatedAt timestamp fields
-      freezeTableName: true,  // don't pluralize name of database table
-      underscored: true,  // use underscores instead of camel-casing  
-      modelName: 'diceimagepaths', // make it so our model name stays lowercase in the database
+      // pass in our imported sequelize connection (the direct connection to our database)
+      sequelize,
+      timestamps: true,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'gameboardstate',
    }
 );
 
-module.exports = DiceImagePaths;
+module.exports = GameboardState;

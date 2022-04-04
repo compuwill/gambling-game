@@ -35,5 +35,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} \nhttp://localhost:${PORT}/gamehome (alternative home)` ));
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} \nhttp://localhost:${PORT}/gamehomelive (alternative home)` ));
 });

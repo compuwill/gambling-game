@@ -1,19 +1,19 @@
 const User = require('./User');
-// const GameboardState = require("./GameboardState");
+const GameboardState = require("./GameboardState");
 const DiceGameSetUp = require("./DiceGameSetUp");
 const DiceImagePaths = require("./DiceImagePaths");
 const DiceGameBoard = require("./DiceGameBoard");
 const DiceGamePrize = require("./DiceGamePrize");
 
-// // --create associations
-// User.hasMany(GameboardState, {
-//    foreignKey: 'user_id'  
-//  })
-// 
-//  // --assert the reverse association 
-// GameboardState.belongsTo(User, {
-// foreignKey: 'user_id',
-// }); 
+// --create associations
+User.hasMany(GameboardState, {
+   foreignKey: 'user_id'  
+})
+
+ // --assert the reverse association 
+GameboardState.belongsTo(User, {
+  foreignKey: 'user_id',
+}); 
 
 //-------------------------------------------
 // --create associations
@@ -23,7 +23,7 @@ User.hasMany(DiceGameSetUp, {
 
 // --assert the reverse association 
 DiceGameSetUp.belongsTo(User, {
-foreignKey: 'user_id',
+  foreignKey: 'user_id',
 }); 
 
 //-------------------------------------------
@@ -33,13 +33,13 @@ DiceGameSetUp.hasOne(DiceImagePaths, {
  
 DiceGameSetUp.hasOne(DiceGameBoard, {
   foreignKey: 'user_id',
-  });  
+});  
   
 //-------------------------------------------
 DiceGameBoard.hasOne(DiceGamePrize, {
   foreignKey: 'user_id',
-  });  
+});  
 
-// module.exports = { GameboardState };
-module.exports = { User, DiceGameSetUp, DiceImagePaths, DiceGameBoard, DiceGamePrize };
+// module.exports = { User, GameboardState }
+module.exports = { User, GameboardState, DiceGameSetUp, DiceImagePaths, DiceGameBoard, DiceGamePrize } ;
 

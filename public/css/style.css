@@ -7,6 +7,8 @@ body {font-family: arial,sans-serif;}
 .w50 {width: 50%;}
 .w25 {width: 25%;}
 .w15 {width: 15%;}
+.w10 {width: 10%;}
+.w80 {width: 80%;}
 
 /* margin */
 .m1 {margin: 0.5em;}
@@ -206,7 +208,10 @@ p {
   font-size: 1.0rem;
 }
 
-/* 
-.stresstext{
-  font-weight: bold;
-} */
+a {
+  text-decoration: none;
+}
+
+.m20{
+  margin: 0 20px;
+}

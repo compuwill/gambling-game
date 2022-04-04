@@ -1,3 +1,5 @@
+// NOTE: Ignore this model for now ( 4 of 4 )
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -34,7 +36,7 @@ DiceGameBoard.init(
    }, // end of 1st object      
    {
       sequelize, // pass in our imported sequelize connection (the direct connection to our database)
-      timestamps: false, // don't automatically create createdAt/updatedAt timestamp fields
+      timestamps: true, // don't automatically create createdAt/updatedAt timestamp fields
       freezeTableName: true,  // don't pluralize name of database table
       underscored: true,  // use underscores instead of camel-casing  
       modelName: 'dicegameboard', // make it so our model name stays lowercase in the database

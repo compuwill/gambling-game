@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login: collects user inputs and be acting as server doing select query for authentication response 
+// Login: after collecting user inputs, act as server doing select query for authentication response 
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user = { username: user.username, email: user.email };
+      req.session.user = { username: user.username, email: user.email, id: user.id };
 
       res
         .status(200)

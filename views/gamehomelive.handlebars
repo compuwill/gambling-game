@@ -1,0 +1,42 @@
+
+<main>
+   <div class='flex column gray headline-font-style align-items-center '>
+      <div class="flex justify-space-between w100">
+         <h3 class="m20">Welcome, {{dbgameboardstates.0.user.username}}! </h3> 
+         <h3 class="m20">ID: {{dbgameboardstates.0.user.id}}</h3>
+      </div>
+         <div class="justify-space-between w100">
+            <p class="m20">You are now logged in.</p> {{!-- <button id="logout">Log out</button> --}}
+      </div>
+      
+      {{#each dbgameboardstates as |gbstate|}}
+      <hr>
+      <div class="text-left gray headline-font-style">
+         <h3>Record For: <span class="no-bold orange"> ${{gbstate.user.username}} </span></h3>
+      </div>
+      <div class="card-all-round text-center w100">
+         <h3>Account Balance: <span class="no-bold"> ${{gbstate.account_balance}} </span></h3>
+        
+      </div>
+   
+      <div class="text-left gray headline-font-style">
+          <h5>Your Last Bet Amount: ${{ gbstate.bet_amount}}</h5> 
+         <p class="bold-lifted">Current Message: <span class="no-bold blue">  {{ gbstate.prize_winning_prompt }} </span></p>
+      </div>
+      {{/each}}
+
+      <div class="card-all-round flex w100">
+         <div class="w25 grow5">&nbsp;</div>
+         <div class="w25 grow1">
+            <div class='flex column m1'>
+               {{!-- <a href="/dashboard/edit/{{ user.id }}" class='btn bg-blue white p1 rounded text-center'>&nbsp;Start Game Now!&nbsp;</a>   --}}
+               <a href="/dashboard" class='btn bg-blue white p1 rounded text-center'>&nbsp;Enter Game Board!&nbsp;</a>                      
+            </div>
+         </div>
+         <div class="w25 grow5">&nbsp;</div>
+      </div>
+
+   </div>
+</main>
+
+
