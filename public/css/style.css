@@ -5,6 +5,8 @@ body {font-family: arial,sans-serif;}
 .h70 {height: 70vh;}
 .w100 {width: 100vw;}
 .w50 {width: 50%;}
+.w25 {width: 25%;}
+.w15 {width: 15%;}
 
 /* margin */
 .m1 {margin: 0.5em;}
@@ -72,6 +74,7 @@ body {font-family: arial,sans-serif;}
 .violet {color: #462446;}
 .black {color: #000000;}
 .white {color: #ffffff;}
+.gray {color: #565656;}
 
 .bg-red {background-color: #CF000F;}
 .bg-orange {background-color: #EB6B56;}
@@ -81,6 +84,8 @@ body {font-family: arial,sans-serif;}
 .bg-violet {background-color: #462446;}
 .bg-black {background-color: #000000;}
 .bg-white {background-color: #ffffff;}
+
+.headline-font-style { font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif}
 
 /* buttons */
 .btn {
@@ -111,6 +116,11 @@ img {
   padding: 10px;
 }
 
+.dice{
+  height: 125px;
+  width: 125px;
+}
+
 .card {
   border: 1px solid #ccc;
   border-top: none;
@@ -119,8 +129,33 @@ img {
   background-color: rgb(236, 233, 229);
 }
 
+.card-all-round {
+  border: 1px solid #ccc;
+  border-radius:  6px;
+  background-color: rgb(236, 233, 229);
+  padding: 10px 0;
+}
+
 h1 {
   color: burlywood;
+}
+
+h3{
+  font-size: 1.3rem;
+}
+
+h4{
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1.0rem;
+  font-weight: normal;
+  
 }
 
  /* Style the tab */
@@ -159,3 +194,19 @@ h1 {
   padding-left: 20px;
   padding-bottom: 30px;
 } 
+
+.bold-lifted{
+  font-weight: normal;
+  margin-top: -10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 1.0rem;
+}
+
+/* 
+.stresstext{
+  font-weight: bold;
+} */

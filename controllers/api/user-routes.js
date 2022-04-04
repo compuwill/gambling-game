@@ -1,5 +1,19 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+// const { User } = require('../../models');
+const { User, DiceGameSetUp }  = require('../../models');
+
+// Get All
+// GET /api/users
+router.get('/', (req, res) => {   
+  User.findAll({
+     // attributes: {exclude: ['password']}  // to not return password data
+  })   
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+     console.log(err);
+     res.status(500).json(err);
+  });
+});
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -24,7 +38,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// Login: collects user inputs and be acting as server doing select query for authentication response 
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({

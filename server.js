@@ -11,7 +11,7 @@ const sequelize = require('./config/connection');
 // const helpers = require('./utils/helpers');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3009;
 
 const sess = {
   secret: process.env.APP_SECRET,
@@ -34,6 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
-app.listen(PORT, () => console.log(`Rarin' ta go on http://localhost:${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT} \nhttp://localhost:${PORT}/gamehome (alternative home)` ));
 });

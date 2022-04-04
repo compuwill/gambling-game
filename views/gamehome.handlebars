@@ -1,0 +1,64 @@
+<main>
+    <div class='w70 flex column gray headline-font-style'>
+        <div class="justify-space-between">
+            <h3 class="stresstext">Welcome, {{user.username}}!</h3>
+            <p>You are now logged in.</p>
+            
+            {{!-- <button id="logout">Log out</button> --}}
+        </div>
+     
+   
+{{!-- {{#if dgsetudivs.length}} --}}
+   {{!-- {{#each dgsetudivs as |dgsetudiv|}} --}}
+   <div class="card-all-round text-center ">
+      <h5>Your Current Bet Amount: ${{dicegameboard.bet_amount}}</h5> 
+      <div class="flex">
+         <div>
+            <img class="dice" src='{{ diceimagepaths.dice_1_image_path }}' />
+         </div>
+            <div>
+            <img class="dice" src='{{ diceimagepaths.dice_2_image_path }}' />
+         </div>
+         <div>
+            <img class="dice" src='{{diceimagepaths.dice_3_image_path}}' />
+         </div>
+            <div>
+            <img class="dice" src='{{diceimagepaths.dice_4_image_path}}' />
+         </div>
+         <div>
+            <img class="dice" src='{{diceimagepaths.dice_5_image_path}}' />
+         </div>
+         <div>
+            <img class="dice" src='{{diceimagepaths.dice_6_image_path}}' />
+         </div>
+      </div>
+      
+         
+      </div>
+   </div>
+   <div class="text-left gray headline-font-style">
+     <h3>Account Balance: <span class="no-bold">      ${{dicegameboard.account_balance}} </span></h3>
+     <p class="bold-lifted">Current Message: <span class="no-bold blue">  {{dicegameboard.game_message}} </span></p>
+   </div>
+   <div class="card-all-round flex">
+      <div class="w25 grow1">&nbsp;</div>
+      <form class='w15 grow1 text-center' id="start_game">
+            <div class='flex column'>
+                <div class='flex column m1'>
+                    <label htmlFor='bet_amount'>Bet Amount</label><br> 
+                    <input type='bet_amount' name='bet_amount' class='input' id='bet_amount'/>
+                </div>
+                
+            <div class='m1'>
+                <button type='submit' class='btn bg-blue white p1 rounded' id="start_game">Start Game!</button>
+            </div>
+            </div>
+        </form>
+       <div class="w25 grow1">&nbsp;</div>
+      
+   </div>
+
+ </div>      
+   {{!-- {{/each}} --}}
+{{!-- {{/if}} --}}
+</main>
