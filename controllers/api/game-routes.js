@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, History } = require("../../models");
 const withAuth = require('../../utils/auth');
 
 const checkResult = require("../../utils/game-logic");
