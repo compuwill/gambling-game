@@ -52,6 +52,7 @@ router.post("/dice", withAuth, (req, res) => {
           }
         );
 
+
         //update the session user's cash
         req.session.user = { username: req.session.user.username, email: req.session.user.email, cash: dbUserData.cash - req.body.bet_amount + winnings };
 
