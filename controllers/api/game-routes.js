@@ -17,12 +17,14 @@ router.post("/dice", withAuth, (req, res) => {
   }).then((dbUserData) => {
     if (!dbUserData) {
       //check if we have a user
+      console.log('No user found with this id');
       res.status(404).json({ message: "No user found with this id" });
       return;
     }
     //once we find the user data make sure the user has enough money!
     console.log(dbUserData);
-    if (dbUserData.cash < req.body.bet_amount) {
+    if (Math.round(dbUserData.cash * 100) < Math.round(req.body.bet_amount * 100)) {
+      console.log('User does not have enough money!' + dbUserData.cash + " " + req.body.bet_amount);
       res.status(404).json({ message: "User does not have enough money!" });
       return;
     } else {
@@ -52,12 +54,16 @@ router.post("/dice", withAuth, (req, res) => {
         }
       );
 
-
-      History.create({
-        user_id: req.session.user_id,
-        winnings: winnings,
-        results: result,
-      });
+      try {
+        History.create({
+          user_id: req.session.user_id,
+          winnings: winnings,
+          results: result,
+        });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
 
       //update the session user's cash
       req.session.user = { username: req.session.user.username, email: req.session.user.email, cash: dbUserData.cash - req.body.bet_amount + winnings };

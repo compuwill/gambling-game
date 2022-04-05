@@ -48,8 +48,11 @@ const handleRoll = async (event) => {
       //alert(data.result);
     });
   } else {
-    alert("Oops! There was an issue rolling the dice!");
     console.log(response);
+    response.json().then((data) => {
+      alert(data.message);      
+    });
+
   }
 };
 
