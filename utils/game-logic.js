@@ -14,6 +14,7 @@ function checkResult(rolls) {
     var lastNum = rollscopy[0]; //set the last num to the first die
 
     var consecutiveNums = [];
+    var highlight = []; //array of die to highlight
     var currentStreak = 1; //one die is a one die streak
 
     //starting at the second die
@@ -31,9 +32,14 @@ function checkResult(rolls) {
             currentStreak += 1
         }
         else {
-            if (currentStreak >= 2) {
+            if (currentStreak >= 3) {
                 //we have a streak
                 consecutiveNums.push(currentStreak);
+                highlight = rolls.reduce((r, n, i) => {
+                    n === lastNum && r.push(i);
+
+                    return r;
+                }, []);
             }
             currentStreak = 1; //reset to one
         }
@@ -41,26 +47,34 @@ function checkResult(rolls) {
         lastNum = currNum;
     }
 
-    if (currentStreak >= 2) {
+    if (currentStreak >= 3) {
         //we have an end streak
         consecutiveNums.push(currentStreak);
+        highlight = rolls.reduce((r, n, i) => {
+            n === currNum && r.push(i);
+
+            return r;
+        }, []);
     }
+
+
+    console.log("highlight:" + highlight);
 
     console.log(consecutiveNums);
     //order of operations
     if (straight == true)
-        return "Straight";
+        return {result:"Straight", highlight: [0,1,2,3,4]};
     if (consecutiveNums.includes(5))
-        return "5 of a Kind";
+        return {result:"5 of a Kind", highlight: highlight};
     if (consecutiveNums.includes(4))
-        return "4 of a Kind";
-    if (consecutiveNums.includes(3) && consecutiveNums.includes(2))
-        return "Full house";
+        return {result:"4 of a Kind", highlight: highlight};
+    // if (consecutiveNums.includes(3) && consecutiveNums.includes(2))
+    //     return "Full house";
     if (consecutiveNums.includes(3))
-        return "3 of a Kind";
-    
+        return {result:"3 of a Kind", highlight: highlight};
+
     // if none of those
-    return "Lose";
+    return {result:"Lose", highlight: highlight};
 
 }
 

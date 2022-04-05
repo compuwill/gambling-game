@@ -190,6 +190,21 @@
       z-index: -2;
   }
 
+
+  .highlight .die-item {
+    transition: background-color 0.3s ease;
+    background-color: #ff0000;
+  }
+  .highlight .dot {
+    transition: background-color 0.3s ease;
+    background-color: #ffffff;
+  }
+
+
+  #winnings {
+    color: green;
+  }
+
   button {
     align-self: center;
     background-color: #efefef;

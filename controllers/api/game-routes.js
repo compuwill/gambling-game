@@ -4,6 +4,9 @@ const withAuth = require('../../utils/auth');
 
 const checkResult = require("../../utils/game-logic");
 
+//test
+//checkResult([2,2,2,5,5])
+
 // Roll the Dice!
 router.post("/dice", withAuth, (req, res) => {
   console.log("someone's playing dice!");
@@ -37,10 +40,11 @@ router.post("/dice", withAuth, (req, res) => {
       ];
       var result = checkResult(rolls);
       var winnings = 0;
-      if (result === "5 of a Kind") winnings = req.body.bet_amount * 100;
-      if (result === "4 of a Kind") winnings = req.body.bet_amount * 50;
-      if (result === "3 of a Kind") winnings = req.body.bet_amount * 10;
-      if (result === "Straight") winnings = req.body.bet_amount * 5;
+      var multiplier = "";
+      if (result.result === "Straight") { winnings = req.body.bet_amount * 100; multiplier = "100x"; }
+      if (result.result === "5 of a Kind") { winnings = req.body.bet_amount * 50;  multiplier = "50x"; }
+      if (result.result === "4 of a Kind") { winnings = req.body.bet_amount * 25;  multiplier = "25x"; }
+      if (result.result === "3 of a Kind") { winnings = req.body.bet_amount * 5;  multiplier = "5x"; }
 
       //subtract or add the money
       User.update(
@@ -58,7 +62,7 @@ router.post("/dice", withAuth, (req, res) => {
         History.create({
           user_id: req.session.user_id,
           winnings: winnings,
-          results: result,
+          results: result.result,
         });
       } catch (err) {
         console.log(err);
@@ -70,14 +74,11 @@ router.post("/dice", withAuth, (req, res) => {
 
       res.json({
         rolls: rolls,
-        dice1: rolls[0],
-        dice2: rolls[1],
-        dice3: rolls[2],
-        dice4: rolls[3],
-        dice5: rolls[4],
+        highlight: result.highlight,
         winnings: winnings,
+        multiplier: multiplier,
         newCash: dbUserData.cash - req.body.bet_amount + winnings,
-        result: result,
+        result: result.result,
       });
     }
   });
