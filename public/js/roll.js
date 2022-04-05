@@ -23,6 +23,7 @@ function getRandomNumber(min, max) {
 const rollBtn = document.getElementById("roll-btn");
 const rollResult = document.getElementById("result");
 const cashP = document.getElementById("user-cash");
+const bigbets = document.getElementById("bigbets");
 
 const handleRoll = async (event) => {
   event.preventDefault();
@@ -30,7 +31,7 @@ const handleRoll = async (event) => {
   const response = await fetch("/api/game/dice", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ bet_amount: 5 }),
+    body: JSON.stringify({ bet_amount: bigbets.value }),
   });
 
   if (response.ok) {
