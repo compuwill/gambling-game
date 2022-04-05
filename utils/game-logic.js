@@ -46,13 +46,6 @@ function checkResult(rolls) {
         consecutiveNums.push(currentStreak);
     }
 
-    History.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        cash: req.body.cash,
-      });
-
     console.log(consecutiveNums);
     //order of operations
     if (straight == true)
