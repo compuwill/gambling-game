@@ -23,7 +23,11 @@ History.init(
             // placeholder value
             defaultValue: 0,
             allowNull: false
-        }
+        },
+        results: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
     },
     {
     sequelize,
