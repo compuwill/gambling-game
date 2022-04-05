@@ -3,9 +3,15 @@ function rollDice(rolls) {
   const dice = [...document.querySelectorAll(".die-list")];
   var counter = 0;
   dice.forEach((die) => {
+    toggleClasses(die);
     die.dataset.roll = rolls[counter]; //getRandomNumber(1, 6);
     counter++;
   });
+}
+
+function toggleClasses(die) {
+  die.classList.toggle("odd-roll");
+  die.classList.toggle("even-roll");
 }
 
 function getRandomNumber(min, max) {
@@ -24,7 +30,7 @@ const handleRoll = async (event) => {
   const response = await fetch("/api/game/dice", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ user_id: 1, bet_amount: 5 }),
+    body: JSON.stringify({ bet_amount: 5 }),
   });
 
   if (response.ok) {
