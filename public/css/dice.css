@@ -7,7 +7,12 @@
     justify-items: center;
     padding: 2rem;
     perspective: 600px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transform: scale3d(0.5, 0.5, 0.5);
   }
+
   .die-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -219,9 +224,27 @@
     cursor: pointer;
   }
   
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    }
+
+
   @media (min-width: 900px) {
     .dice {
       perspective: 1300px;
     }
   }
   
+  /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .dice {
+    transform: scale3d(1, 1, 1);
+  }
+  .form {
+    flex-direction: row;
+    align-items: center;
+    }
+}
