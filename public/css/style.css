@@ -162,3 +162,11 @@ h1 {
   padding-bottom: 30px;
 }
 
+/* Media Query 980px */
+@media screen and (max-width: 980px) {}
+
+/* Media Query 768px */
+@media screen and (max-width: 768px) {}
+
+/* Media Query 575px */
+@media screen and (max-width: 575px) {}
