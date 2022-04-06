@@ -1,5 +1,7 @@
 /* abolish serifs */
-body {font-family: arial,sans-serif;}
+body {font-family: arial,sans-serif;
+  background-image: url("../images/poker-top.jpg");
+}
 
 /* size */
 .h70 {height: 70vh;}
@@ -158,4 +160,13 @@ h1 {
   display: none;
   padding-left: 20px;
   padding-bottom: 30px;
-} 
+}
+
+/* Media Query 980px */
+@media screen and (max-width: 980px) {}
+
+/* Media Query 768px */
+@media screen and (max-width: 768px) {}
+
+/* Media Query 575px */
+@media screen and (max-width: 575px) {}
