@@ -16,7 +16,7 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: process.env.APP_SECRET,
+  secret: 'Just Not Too Critical To Be a Secrete',
   cookie: {},
   resave: false,
   saveUninitialized: true,
