@@ -1,0 +1,102 @@
+[
+    {
+        "id": 51,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T10:50:34.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 50,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:36:13.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 49,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:36:08.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 48,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:46.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 47,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:36.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 46,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:30.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 45,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:26.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 44,
+        "winnings": "40.00",
+        "results": "3 of a Kind",
+        "created_at": "2022-04-08T07:35:17.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 43,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:13.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    },
+    {
+        "id": 42,
+        "winnings": "0.00",
+        "results": "Lose",
+        "created_at": "2022-04-08T07:35:09.000Z",
+        "user": {
+            "id": 2,
+            "username": "MercuryKT"
+        }
+    }
+]

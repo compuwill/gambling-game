@@ -1,0 +1,85 @@
+<div class='card'>
+    <div class='tab'>
+        <button id="logout">Log out</button>
+        <button onclick="location.href='/dashboard' " id="rate_menu_btn" >Rate App</button>
+        <button onclick="location.href='/' "  id="play_menu_home_btn" >Play Game</button>
+        <button href="#" disabled="disabled" id="history_menu_home_btn" >Game History</button>
+    </div>
+</div>  
+
+{{#if history.length}}
+<div class="card_header">
+      <h3>USER DASHBOARD FOR <span id="target_username"> {{make_uppercase  history.0.user.username}}</span></h3>
+   </div>
+    <div class="card_header">   
+      <h3>Winning Statistics </h3>
+      <h5>Number of Loses: {{history.0.casualty}} ::: Number of Winnings: {{history.0.victory}}  </h5>
+      <h6> Winning Percentage: {{cal_percentage history.0.casualty  history.0.victory}}% </h6>
+      <div style="display:flex !important;  justify-content: space-around; margin: 0 15px;">       
+         <h6>  Ten Most Recent Winning Records: </h6>
+      </div>
+      <div style="display:flex !important;  justify-content: space-around; margin: 0 30px 0 20px;">
+         <div class="col-4 letter-spacing"> <p> Name of Prize </p></div>
+         <div class="col-4 letter-spacing"> <p> Winning Amount </p></div>
+         <div class="col-4 letter-spacing"> <p> Winning Date </p></div>
+      </div>
+   </div>  
+{{#each history as |ehistory| }}   
+{{#ifEquals results "Lose"}}  
+
+{{else}}
+<div class="cardwide">
+   <div class="card_body">
+      <div style="display:flex !important;  justify-content: space-between; margin-left: 80px;">
+         <div class="col-1"> <p></p></div>
+         <div class="col-4"> <h4>::: {{ ehistory.results }} :::</h4></div>
+         <div class="col-4"> <p> $ {{ ehistory.winnings }} </p></div>
+         <div class="col-3"> <p>{{ format_date ehistory.created_at }}</p></div>
+      </div> 
+      {{/ifEquals}}  
+   </div>   
+</div>
+
+{{/each}}
+{{else}}
+ <div class="cardwide">
+   <div class="card_header">
+      <h3>USER DASHBOARD</h3>
+   </div>
+   <div class="card_header">   
+      <h3>Winning Statistics </h3>
+      <h5>Number of Loses: 0  ::: Number of Winnings: 0 </h5>
+      <h6> Winning Percentage: 0 </h6>
+      <div style="display:flex !important;  justify-content: space-around; margin: 0 15px;">       
+         <h6>  Ten Most Recent Winning Records: </h6>
+      </div>
+      <div style="display:flex !important;  justify-content: space-around; margin: 0 0 0 10px;">
+         <div class="col-4 letter-spacing"> <p> Name of Prize </p></div>
+         <div class="col-4 letter-spacing"> <p> Winning Amount </p></div>
+         <div class="col-4 letter-spacing"> <p> Winning Date </p></div>
+      </div>
+   </div>
+
+   <div class="card_body">
+      <div style="display:flex !important;  justify-content: space-between; margin-left: 125px; margin-bottom: 250px;">
+         <div class="col-4"> <p> </p> </div> <div class="col-1"> <p> </p> </div>
+         <div class="col-4"> <h4>  No Record Found at This Time</h4> </div>
+         <div class="col-4"> <p> </p> </div>
+          
+   </div>
+
+</div>
+{{/if}}  
+   
+<script type="text/javascript">
+$(document).ready(function () {
+      var logo = document.getElementById('two_dice_img')
+      logo.style.display = "none";
+      logo.classList.remove('p4-top');('p4-top');
+      $('#history_menu_home_btn').addClass('no-hover');
+      
+});
+</script>
+ 
+<script src="/js/logout.js"></script>
+ 
