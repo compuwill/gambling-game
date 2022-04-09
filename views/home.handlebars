@@ -1,4 +1,4 @@
-<main>
+{{!-- <main>
   <div class="w100 flex column align-items-center color: white">
     <h3>Welcome, {{user.username}}!</h3>
     <p>You are now logged in.</p>
@@ -19,7 +19,49 @@
 
     <button id="logout">Log out</button>
   </div>
-</main>
+</main> --}}
+
+<div class='card'>
+    <div class='tab'>
+        <button id="logout">Log out</button>
+        <button onclick="location.href='/dashboard' ">Rate App</button>
+         <button onclick="location.href='/gamehistory' " id="history_menu_home_btn" >Game History</button>
+    </div>  
+</div>
+
+<div class="cardwide">
+    <div class="card_header">
+      <h3>Welcome, {{user.username}}!</h3>
+      <p>You are now logged in.</p>
+      <p id="user-cash">You have ${{user.cash}}!</p>
+{{> dice}}
+    </div>
+    <div class="card_body">
+      <div class="post_content">
+        <div style="justify-content: space-between; min-height: 250px;">
+          <form class="bet-form">
+            <div>
+              <label for="fname" class="form_label">Bet Amount: $</label>
+              <input type="number" id="bigbets" name="bigbets" min="1.00" value="5.00" step="0.01" pattern="^\d*(\.\d{0,2})?$" class="form_input">
+              <button type="button" id="roll-btn">roll dice</button>
+            </div>
+            <h1 id="multiplier"></h1>
+            <h2 id="result">Ready to Roll!</h2>
+            <p id="winnings"></p>
+          </form>
+        </div>            
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+   var logo = document.getElementById('two_dice_img');
+   logo.style.display = "none";
+   logo.classList.remove('p4-top');
+    
+})
+</script>
 
 <script src="/js/logout.js"></script>
 

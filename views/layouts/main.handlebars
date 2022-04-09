@@ -5,11 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gambling game</title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/css/dice.css">
+    <link rel="stylesheet" href="/thirdparties/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />	
+    <link rel="stylesheet" href="/thirdparties/jqwidgets/styles/jqx.arctic.css" type="text/css" />
+    <script type="text/javascript" src="/thirdparties/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/thirdparties/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="/thirdparties/jqwidgets/jqxrating.js"></script>
+
+    <link rel="stylesheet" href="/css/handlebars.css" />
+    <link rel="stylesheet" href="/css/dice.css" />
 </head>
 
-<body>
+{{!-- <body>
     <div class='h70 w100 p4-top flex-wrap column align-items-center'>
       <header class="flex">
           <h1>It's Gamblin' Time!</h1>
@@ -17,6 +25,25 @@
       </header>
       {{{body}}}
     </div>
-</body>
+</body> --}}
 
+  <body >
+    
+    <header class="flex p4-top" id="two_dice_img">
+      <h1>It's Gamblin' Time!</h1>
+      <img src='/images/dice.png' />
+     
+    </header>
+    <main class="flex_column ">
+      <div class="col-12">
+        {{{ body }}} 
+      </div>
+    </main>  
+    <footer id="homefooter">
+      &copy; 2022 Rolling Dice MVC
+    </footer>
+  
+
+  </body>
+  
 </html>

@@ -1,0 +1,153 @@
+<div class='card'>
+    <div class='tab'>
+        <button id="logout">Log out</button>
+        <button href="#" disabled="disabled" id="rate_menu_btn" >Rate App</button>       
+        <button onclick="location.href='/' " id="play_menu_home_btn" >Play Game</button>
+       
+    </div>  
+</div>
+{{#if ratings.length}}
+{{#each ratings as |rating| }}   
+<div class="cardwide">
+   <div class="card_header">
+      <h3>USER DASHBOARD FOR <span id="target_username"> {{make_uppercase  user.username}}</span></h3>
+      <input type="hidden" id="scoreinfo" name="scoreinfo" value={{score}}>
+   </div>
+   <form id="rating_form">
+      <div class="card_body flex_column" >
+         <div class="post_content">
+            <h4>Your Rating: </h4>  
+            <div class="post_content ">
+               <div style="display:flex !important; justify-content: space-around;">
+                  <div class="col-4">&nbsp;</div>
+                     <div class="col-4"> 
+                     <div id='jqxWidget' style="margin: 20px 0 30px 70px;" >
+                           <div id='jqxWidget' >
+                              <div id='jqxRating' ></div>
+                           </div>
+                     </div>
+                  </div>
+                  <div class="col-3">&nbsp;</div>
+               </div>
+            </div>
+    
+         <button id="send_score_btn" type="submit" >Submit</button> 
+         <h3 id='rate' class="m1"> </h3>
+      </div>
+      
+   </form>
+   <div class="card_body">
+      <div class="post_content">
+         <div style="display:flex !important;  justify-content: space-between; min-height:100px;">
+            <div class="col-4">&nbsp;</div>
+            
+            <div class="col-4">&nbsp;</div>
+         </div>
+         <a href="/gamehistory/" style="margin: 0 0 0 15px;">See {{user.username}}'s Game History</a>
+      </div>
+    
+   </div>
+
+</div>
+{{/each}}
+{{else}}
+ <div class="cardwide">
+   <div class="card_header">
+      <h3>USER DASHBOARD </h3>
+   </div>
+   <form id="rating_form">
+      <div class="card_body flex_column" >
+         <div class="post_content">
+            <h4>Your Rating: </h4>  
+            <div class="post_content ">
+               <div style="display:flex !important; justify-content: space-around;">
+                  <div class="col-4">&nbsp;</div>
+                     <div class="col-4"> 
+                     <div id='jqxWidget' style="margin: 20px 0 30px 80px;" >
+                           <div id='jqxWidget' >
+                              <div id='jqxRating' ></div>
+                           </div>
+                     </div>
+                  </div>
+                  <div class="col-3">&nbsp;</div>
+               </div>
+            </div>
+    
+         <button id="send_score_btn" type="submit" >Submit</button> 
+         <h3 id='rate' class="m1"> </h3>
+      </div>
+      
+   </form>
+   <div class="card_body">
+      <div class="post_content">
+         <div style="display:flex !important;  justify-content: space-between; min-height:150px;">
+            <div class="col-4">&nbsp;</div>
+            
+            <div class="col-4">&nbsp;</div>
+         </div>
+         <a href="/gamehistory/">See Game History</a> 
+      </div>
+    
+   </div>
+
+</div>
+{{/if}}
+
+<script type="text/javascript">
+$(document).ready(function () {
+      var logo = document.getElementById('two_dice_img')
+      logo.style.display = "none";
+      logo.classList.remove('p4-top');
+      var scoreinfo = document.getElementById('scoreinfo');
+      var score = 0;
+      if(scoreinfo){
+          score = scoreinfo.value; 
+      }
+      else{
+          score = 0; 
+      }
+        
+      $('#rate_menu_btn').addClass('no-hover')
+      //alert(score);
+
+      // Create jqxRating
+      $("#jqxRating").jqxRating({ width: 500, 
+                                 height: 35, 
+                                 theme: 'classic',
+                                 itemHeight:65,
+                                 itemWidth: 70
+                                    });
+      
+      $("#jqxRating").on('change', function (event) {
+      $("#rate").find('span').remove();
+      //$("#rate").append(' ' + event.value + ' ');    
+           
+      }); // end of on change event
+       if((!score) || ((typeof score == 'undefined') || (score == ''))){
+         $('#jqxRating').jqxRating('enable'); 
+         $("#rate").text = '';
+         $("#rate").append('');   
+         $('#send_score_btn').removeAttr('disabled');
+         $('#send_score_btn').removeClass('no-hover');
+   }  
+       
+      else{
+         $('#jqxRating').jqxRating('setValue', score); 
+         $('#jqxRating').jqxRating('disable'); 
+         $("#rate").append('&raquo; You have rated this app &laquo;<br> &raquo; Thank you &laquo;');   
+         $('#send_score_btn').attr('disabled','disabled');
+         $('#send_score_btn').addClass('no-hover');
+         $('#jqxRating').addClass('no-hover');
+
+       }
+      
+      // end of rating
+     
+}) // end of doc ready method
+
+</script>
+  
+<script src="/js/gamerating.js"></script>
+<script src="/js/logout.js"></script>
+ 
+ 
