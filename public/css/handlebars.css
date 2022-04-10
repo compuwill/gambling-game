@@ -3,12 +3,12 @@
   --essential: rgb(239, 241, 240);
   --secondary: rgb(221, 225, 225);
   --tertiary:rgb(136, 136, 136); 
-  --light-dark: rgb(114, 174, 167);
+  --teal-light-dark: rgb(114, 174, 167);
   --dark:  rgb(89, 89, 89);
-  --medium_dark:  rgb(119, 119, 119); 
-  --superdark:  rgb(78, 78, 78); 
+  --medium_dark:  rgb(99, 99, 99); 
+  --grade2_medium_dark:  rgb(109, 109, 109);
   --gray_tone_light:rgb(231, 231, 231);  
-  --gray_tone_medium:  rgb(154, 196, 187); 
+  --teal_toned_medium:  rgb(154, 196, 187); 
   --winning: orangered;
   --weather_light:  rgb(255, 254, 253);  
   --border-radius: .3rem;
@@ -21,7 +21,7 @@ body {
   padding: 0;
   
   font-size: 19px !important;
-  color: var(--superdark);
+  color: var(--grade2_medium_dark);
   background: linear-gradient(var(--essential), var(--));
   background-color: var(--weather_light);  
   font-family: var(--franklin_formal_greeting_font);
@@ -50,7 +50,7 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 120%;
-  color: var(--light-dark);
+  color: var(--teal-light-dark);
 }
 
 footer p {
@@ -64,7 +64,7 @@ main {
 } 
 
 h6{
-  color: var(--light-dark);
+  color: var(--teal-light-dark);
   font-size: 1.3rem;
   font-weight: normal;
   margin: 0;
@@ -73,7 +73,7 @@ h6{
 .jqx-numberinput input {
   font-size: 1.8rem  !important;
   font-weight: bold;
-  color: var(--light-dark) !important;
+  color: var(--teal-light-dark) !important;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center !important;
   padding: 0;
@@ -82,14 +82,14 @@ h6{
 .jqx-numberinput input:hover {
   font-size: 1.8rem  !important;
   font-weight: bold;
-  color: var(--light-dark) !important;
+  color: var(--teal-light-dark) !important;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center !important;
   padding: 0;
 }
 
 .jqx-input-extra{
-  border: 1px solid var(--light-dark) !important;
+  border: 1px solid var(--teal-light-dark) !important;
 }
 
 .btnwide {
@@ -151,7 +151,7 @@ h6{
 .card_header {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--superdark);
+  color: var(--grade2_medium_dark);
   background-color: var(--essential);
   padding: 20px 50px 20px 0;
   margin: 0 0 10px 0; 
@@ -188,7 +188,7 @@ h6{
 }
 
 .card_header p { 
-  color: var(--superdark);
+  color: var(--grade2_medium_dark);
   font-weight: 600;
   font-size: 1.5rem;
   text-decoration: none;
@@ -208,7 +208,7 @@ h6{
   padding: 0;
   font-size: 16px !important;
   background: linear-gradient(var(--primary), var(--gray_tone_light));
-  color: var(--superdark);
+  color: var(--medium_dark);
   border-bottom: 1px solid var(--secondary);
 }
 
@@ -379,7 +379,7 @@ h6{
   margin: 0 0 0 75px;
   font-size: 1.6rem  !important;
   font-weight: 700;
-  color: var(--superdark);
+  color: var(--grade2_medium_dark);
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
 
 }
@@ -391,8 +391,8 @@ h6{
   margin: 1px 15px 20px 5px; 
   font-size: 1.7rem  !important;
   font-weight: bold;
-  border: 1px solid var(--light-dark) !important;
-  color: var(--light-dark) !important;
+  border: 1px solid var(--teal-light-dark) !important;
+  color: var(--teal-light-dark) !important;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
 
@@ -405,7 +405,7 @@ h6{
   margin: 1px 15px 20px 5px;
   font-size: 1.7rem  !important;
   font-weight: bold;
-  border: 1px solid var(--light-dark) !important;
+  border: 1px solid var(--teal-light-dark) !important;
   outline: none;
   color: var(--tertiary) !important;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
