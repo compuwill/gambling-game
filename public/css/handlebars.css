@@ -6,7 +6,7 @@
   --light-dark: rgb(114, 174, 167);
   --dark:  rgb(89, 89, 89);
   --medium_dark:  rgb(119, 119, 119); 
-  --superdark:  rgb(62, 62, 62); 
+  --superdark:  rgb(78, 78, 78); 
   --gray_tone_light:rgb(231, 231, 231);  
   --gray_tone_medium:  rgb(154, 196, 187); 
   --winning: orangered;
@@ -188,7 +188,7 @@ h6{
 }
 
 .card_header p { 
-  color: var(--medium_dark);
+  color: var(--superdark);
   font-weight: 600;
   font-size: 1.5rem;
   text-decoration: none;
@@ -208,7 +208,7 @@ h6{
   padding: 0;
   font-size: 16px !important;
   background: linear-gradient(var(--primary), var(--gray_tone_light));
-  color: var(--dark);
+  color: var(--superdark);
   border-bottom: 1px solid var(--secondary);
 }
 
