@@ -74,7 +74,7 @@ const handleRoll = async (event) => {
   const response = await fetch("/api/game/dice", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ bet_amount: bigbets.value }),
+    body: JSON.stringify({ bet_amount: parseFloat($('#bigbets').jqxNumberInput('val')) }),
   });
 
   if (response.ok) {
@@ -100,15 +100,14 @@ const handleRoll = async (event) => {
         audShake.pause();
 
         rollResult.innerText = data.result;
-        cashP.innerText = `You have $${data.newCash}!`
+        cashP.innerText = parseFloat(data.newCash).toFixed(2); //`$${data.newCash}!`
         //highlight the winning dice
         highlightDice(data.highlight);
 
         //show the multiplier
         rollMultiplier.innerText = data.multiplier;
         if (data.winnings > 0)
-        rollWinnings.innerText = "+$"+data.winnings;
-
+        rollWinnings.innerText = "+$"+ parseFloat(data.winnings).toFixed(2); // "+$"+data.winnings; 
 
       }, 1850);
       //alert(data.result);
