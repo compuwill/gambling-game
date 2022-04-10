@@ -39,7 +39,7 @@ header h1 {
   padding: 0;
   margin: 0;
   color: burlywood;
-  text-shadow: -3px 3px 2px var(--gray_tone_light); /* KT */
+  text-shadow: -2px 3px 2px var(--gray_tone_light); /* KT */
 }
  
 footer {
@@ -52,6 +52,10 @@ footer {
   font-size: 120%;
   color: var(--light-dark);
 }
+
+footer p {
+  margin: 5px 25px 10px 0;
+}
  
 main {
   margin: 10px auto;
@@ -59,18 +63,33 @@ main {
   border: 0 solid transparent !important;
 } 
 
-h4{
-  color: var(--winning);
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin: 10px auto 0 auto;
-}
-
 h6{
   color: var(--light-dark);
   font-size: 1.3rem;
   font-weight: normal;
   margin: 0;
+}
+
+.jqx-numberinput input {
+  font-size: 1.8rem  !important;
+  font-weight: bold;
+  color: var(--light-dark) !important;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center !important;
+  padding: 0;
+}
+
+.jqx-numberinput input:hover {
+  font-size: 1.8rem  !important;
+  font-weight: bold;
+  color: var(--light-dark) !important;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center !important;
+  padding: 0;
+}
+
+.jqx-input-extra{
+  border: 1px solid var(--light-dark) !important;
 }
 
 .btnwide {
@@ -140,7 +159,7 @@ h6{
   border-bottom: 2px solid var(--tertiary);
   border-radius: var(--border-radius);
 }
- 
+
 .card_header a { 
   color: var(--tertiary);
   font-weight: 600;
@@ -171,7 +190,7 @@ h6{
 .card_header p { 
   color: var(--medium_dark);
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-decoration: none;
   margin: 15px auto 10px auto;
   padding: 0;
@@ -184,6 +203,24 @@ h6{
   background: linear-gradient(var(--primary), var(--gray_tone_light));
   border-top: 1px solid var(--secondary);
 }
+
+.card_body p{
+  padding: 0;
+  font-size: 16px !important;
+  background: linear-gradient(var(--primary), var(--gray_tone_light));
+  color: var(--dark);
+  border-bottom: 1px solid var(--secondary);
+}
+
+.card_body h4{
+  margin: 13px 30px 20px 0 !important;
+  padding: 0 auto !important;
+  color: var(--winning) !important;
+  font-weight: bold;
+  font-size: 1.1rem !important;
+  font-family: var(--franklin_formal_greeting_font) !important;
+  border-bottom: 1px solid var(--secondary);
+ }
  
 .card_body a {    
   font-size: 1.2rem;
@@ -231,15 +268,15 @@ h6{
  }
 
 .card_body button{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration:none;
   padding: 7px 5px;
   width: 15%;
   margin: 5px 20px 12px 5px;
-
+  
   border-radius: var(--border-radius);
-  color:  var(--primary);
+  color:  var(--weather_light);
   outline: none;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
   background: linear-gradient(var(--secondary), var(--tertiary));
@@ -247,12 +284,12 @@ h6{
   border: 0 solid var(--tertiary);
   border-top: var(--tertiary) 1px solid;
   border-bottom: var(--tertiary) 1px solid;
-  border-right: var(--tertiary) 1 solid;
-  border-left: var(--tertiary) 1 solid;
+  border-right: var(--tertiary) 0 solid;
+  border-left: var(--tertiary) 0 solid;
  }
 
 .card_body button:hover{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration:none;
   padding: 7px 5px;
@@ -264,18 +301,18 @@ h6{
   outline: none;
 
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
-  background: linear-gradient(var(--essential), var(--secondary));
-  background: -webkit-linear-gradient(var(--essential), var(--secondary)); 
+  background: linear-gradient(var(--essential), var(--weather_light));
+  background: -webkit-linear-gradient(var(--essential), var(--weather_light)); 
 
   border-top: var(--tertiary) 1px solid;
-  border-bottom: var(--essential) 1px solid;
-  border-right: var(--tertiary) 1 solid;
-  border-left: var(--tertiary) 1 solid;
+  border-bottom: var(--primary) 1px solid;
+  border-right: var(--tertiary) 0 solid;
+  border-left: var(--tertiary) 0 solid;
 }
   
 .post_content {
   width: 95%;
-  min-height: 60px;
+  min-height: 80px;
  
   background-color: transparent;
   text-align: center;
@@ -285,16 +322,24 @@ h6{
   border-bottom: 2px solid var(--essential);
   border-radius: var(--border-radius);
   margin: 0 1px 0 1px;
-  padding: 15px;
+  padding: 2px auto ;
     
 }
 
-.post_content h1, h2{
-  margin: 20px 35px 1px 0;
+.post_content h1{
+  margin: 15px 2px 1px 0 !important;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
   font-weight: 700;
   color: var(--dark);
-  padding: auto 0;
+  padding: 10px auto ;
+}
+
+.post_content h2{
+  margin: -15px 2px 0 0 !important;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
+  font-weight: 700;
+  color: var(--dark);
+  padding: 0 0 10px 0;
 }
 
 .post_content h3{
@@ -304,7 +349,16 @@ h6{
  }
 
 .post_content h4{
-  margin: 2px 2px 15px 0 !important;
+  margin: 5px -15px 30px 0 !important;
+  padding: 0 auto !important;
+  color: var(--winning);
+  font-weight: bold;
+  font-size: 1.4rem !important;
+  font-family: var(--franklin_formal_greeting_font) !important;
+ }
+
+ .post_content h5{
+  margin: 5px -15px 30px 0 !important;
   padding: 0 auto !important;
   color: var(--dark);
   font-weight: bold;
@@ -318,6 +372,7 @@ h6{
   font-weight: 700;
   font-size: 1.7rem;
   color: var(--winning) !important;
+  padding-bottom: 25px;
  }
 
  .form_label {
@@ -333,13 +388,14 @@ h6{
   height: 16px;
   width: 15%;
   padding: 15px;
-  margin: 1px 15px 20px 5px;
+  margin: 1px 15px 20px 5px; 
   font-size: 1.7rem  !important;
   font-weight: bold;
   border: 1px solid var(--light-dark) !important;
   color: var(--light-dark) !important;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
+
 }
 
 .form_input:focus{
@@ -355,16 +411,6 @@ h6{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
 }
-
-/* .float-right{
-  float: right;
-  margin: 20px 0;
-}
-
-.float-left{
-  float: left;
-  margin: 20px 0;
-} */
 
 .no-hover{
   pointer-events: none;
@@ -634,9 +680,3 @@ h6{
 
 /* Media Query 575px */
 @media screen and (max-width: 575px) {}
-
-
-
- 
- 
- 
