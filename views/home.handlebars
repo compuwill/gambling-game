@@ -33,22 +33,23 @@
     <div class="card_header">
       <h3>Welcome, {{user.username}}!</h3>
       <p>You are now logged in.</p>
-      <p id="user-cash">You have ${{user.cash}}!</p>
+      <div style="display:inline-flex;"> <p>You have&nbsp;</p><p id="user-cash"> {{format_currency user.cash}} </p> </div>
+     
 {{> dice}}
     </div>
     <div class="card_body">
       <div class="post_content">
         <div style="justify-content: space-between; min-height: 250px;">
-          <form class="bet-form">
-            <div>
+          <div class="dice">
               <label for="fname" class="form_label">Bet Amount: $</label>
-              <input type="number" id="bigbets" name="bigbets" min="1.00" value="5.00" step="0.01" pattern="^\d*(\.\d{0,2})?$" class="form_input">
-              <button type="button" id="roll-btn">roll dice</button>
-            </div>
-            <h1 id="multiplier"></h1>
-            <h2 id="result">Ready to Roll!</h2>
-            <p id="winnings"></p>
-          </form>
+              <div id='jqxWidget'>
+                  <div id='bigbets' class="jqx-input-extra"></div>
+              </div>
+              <button type="button" id="roll-btn"  >roll dice</button>
+          </div>
+          <h1 id="multiplier"></h1>
+          <h2 id="result">Ready to Roll!</h2>
+          <h4 id="winnings"></h4>
         </div>            
       </div>
     </div>
@@ -56,11 +57,60 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
-   var logo = document.getElementById('two_dice_img');
-   logo.style.display = "none";
-   logo.classList.remove('p4-top');
+  var logo = document.getElementById('two_dice_img');
+  logo.style.display = "none";
+  logo.classList.remove('p4-top');
+
+  // Create jqxNumberInput
+  $("#bigbets").jqxNumberInput({ width: '260px', height: '43px', spinButtons: false,
+  decimalDigits: 2, min: 1.00 , max: 99999999, spinButtons: true, inputMode: 'simple', decimal: 5  });      
+  var availCash = document.getElementById("user-cash");   
+  //alert("avail cash: " + availCash.textContent)
+
+  $('#bigbets').on('change', function (event) {
+    var value = event.args.value;
     
-})
+    if (parseFloat(value) > parseFloat(availCash.textContent)){
+        $('#roll-btn').attr('disabled','disabled');
+        $('#roll-btn').addClass('no-hover');
+        alert ("Bet Amount is greater than available cash."); // inform
+        if (parseFloat(availCash.textContent) < 1){
+          alert("Sorry You can no longer play. \nYour bank is less than $1.00");
+          $('#result').text("Sorry You can no longer play. \nMinimum Bet Amount is $1.00");
+        }
+    }
+    else{
+      $('#roll-btn').removeAttr('disabled');
+      $('#roll-btn').removeClass('no-hover');
+      $('#result').text('Ready to Roll!');
+      $('#winnings').text('');  
+    }
+
+  }); // end on-change event
+
+  if ( parseFloat(availCash.textContent) < 1)
+  {
+    $('#roll-btn').attr('disabled','disabled');
+    $('#roll-btn').addClass('no-hover');
+    $('#result').text("Sorry You can no longer play. \nMinimum Bet Amount is $1.00");
+  }
+  else if (parseFloat($('#bigbets').jqxNumberInput('val') > parseFloat(availCash.textContent)))
+  {
+    $('#roll-btn').attr('disabled','disabled');
+    $('#roll-btn').addClass('no-hover');
+    $('#result').text("Sorry You can no longer play. \nMinimum Bet Amount is $1.00");
+  }
+  else{
+    $('#roll-btn').removeAttr('disabled');
+    $('#roll-btn').removeClass('no-hover');
+    $('#result').text('Ready to Roll!');
+    $('#winnings').text('');  
+  }
+  
+
+});
+ 
+
 </script>
 
 <script src="/js/logout.js"></script>

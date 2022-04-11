@@ -33,6 +33,16 @@ module.exports = {
 
   ifEquals: (arg1, arg2, options) => {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+  },
+
+  format_currency: (amount) => {
+    if(amount){
+      return parseFloat(amount).toFixed(2);
+    }
+    else{
+      return "0.00";
+    }
+    
   }
 
  }
