@@ -4,7 +4,7 @@
 ## Description
 We created a gambling game similar to Yahtzee.
 
-![image](https://user-images.githubusercontent.com/22924230/162654765-fb9c13fc-84c8-47f6-a03f-5b523a54a5e6.png)
+![image](https://user-images.githubusercontent.com/22924230/162654791-3caec747-76c8-4b99-b7c4-277f19f3a405.png)
 
 ### Technologies
 - Express Node.Js Based
