@@ -3,7 +3,8 @@
 
 ## Table of Contents
 
-- [Technologies](##Technologies)
+- [Technologies](#Technologies)
+- [Breakdown and Roles] (#Breakdown and Roles)
 - [Installation](#installation)
 - [Usage](#usage)
 
