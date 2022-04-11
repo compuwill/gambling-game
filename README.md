@@ -10,6 +10,11 @@
 
 ## Description
 We created a gambling game similar to Yahtzee.
+#### Summary of Game Prize:
+##### &bull; 5 of a kind : 100 x Bet Amount
+##### &bull; 4 of a kind :  50 x Bet
+##### &bull; 3 of a kind :  10 x Bet
+##### &bull; A Straight&nbsp; :  50 x Bet
 
 ![image](https://user-images.githubusercontent.com/22924230/162654791-3caec747-76c8-4b99-b7c4-277f19f3a405.png)
 
