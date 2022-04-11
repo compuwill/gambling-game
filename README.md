@@ -1,5 +1,5 @@
 
-# its gambling time
+# Gambling Game
 
 ## Description
 We created a gambling game similar to Yahtzee.
