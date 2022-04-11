@@ -1,6 +1,12 @@
 
 # Gambling Game
 
+## Table of Contents
+
+- [Technologies](##Technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+
 ## Description
 We created a gambling game similar to Yahtzee.
 
@@ -19,11 +25,6 @@ We created a gambling game similar to Yahtzee.
 - Kim/Will: logic
 - Bryce: Created the back-end Models 
 - All : Finishing CSS / JS and API logic
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
 
 ## Live Link
 https://its-gambling-time.herokuapp.com/
