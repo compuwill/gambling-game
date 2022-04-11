@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [Technologies](#Technologies)
-- [Breakdown](#Breakdown)
+- [Roles](#Roles)
 - [Installation](#installation)
 - [Usage](#usage)
 
@@ -21,7 +21,7 @@ We created a gambling game similar to Yahtzee.
 - Sequelize ORM based Models/Relational-Database
 - Third Party Library: jqwidgets
 
-### Breakdown and Roles
+### Roles
 - Brandan/Tania: Creating initial HTML and styling
 - Kim/Will: logic
 - Bryce: Created the back-end Models 
