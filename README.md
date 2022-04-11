@@ -2,8 +2,10 @@
 # its gambling time
 
 ## Description
-
 We created a gambling game similar to Yahtzee.
+
+![image](https://user-images.githubusercontent.com/22924230/162654765-fb9c13fc-84c8-47f6-a03f-5b523a54a5e6.png)
+
 ### Technologies
 - Express Node.Js Based
 - MVC structural architecture with Handlebars view engine
@@ -23,6 +25,8 @@ We created a gambling game similar to Yahtzee.
 - [Installation](#installation)
 - [Usage](#usage)
 
+## Live Link
+https://its-gambling-time.herokuapp.com/
 
 ## Installation
 
